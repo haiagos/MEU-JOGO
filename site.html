@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Meta tags para configuração básica e SEO -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jogue como Joaquim, o palhaço condenado ao inferno, em sua jornada para recuperar seu 13º salário enfrentando demônios e desafios infernais.">
+    <title>Circo Infernal - O 13º Salário de Joaquim</title>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Eater&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Link para o arquivo CSS -->
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="hell-nav">
+            <div class="nav-links">
+                <a href="#hero" class="nav-link">Início</a>
+                <a href="#story" class="nav-link">História</a>
+                <a href="#game" class="nav-link">Jogar</a>
+                <a href="#enemies" class="nav-link">Inimigos</a>              
+                <a href="#about" class="nav-link">Sobre</a>
+                <a href="#feedback" class="nav-link">Feedback</a>
+                <a href="#credits" class="nav-link">Créditos</a>
+                
+            </div>
+        </nav>
+          
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1 class="main-title">Circo Infernal</h1>
+        <p class="tagline">A jornada sangrenta de Joaquim</p>
+        <button class="hero-button" onclick="document.querySelector('#story').scrollIntoView({ behavior: 'smooth' });">
+            Descubra a História
+        </button>
+    </section>
+
+    <!-- História Section -->
+    <section id="story" class="section">
+        <h2>História</h2>
+        <p>
+            Pichula era um palhaço que trabalhava em um circo, mas sua vida tomou um rumo sombrio quando ele foi enganado por seu patrão e acabou sendo condenado ao inferno. Agora, ele deve enfrentar demônios e criaturas sobrenaturais para recuperar seu 13º salário e escapar desse pesadelo.
+        </p>
+        <p>
+            Em um circo amaldiçoado onde os números nunca fecham, Pichula precisará usar todas as suas habilidades para sobreviver às armadilhas mortais e desafios sobrenaturais.
+        </p>
+    </section>
+
+    <!-- Jogar Section -->
+    <section id="game" class="section">
+        <h2>Jogue Agora</h2>
+        <div class="game-container">
+            <iframe id="game-iframe" src="URL_DO_SEU_JOGO_CONSTRUCT3_AQUI" title="Circo Infernal - Jogo" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Inimigos Section -->
+    <section id="enemies" class="section">
+        <h2>Inimigos</h2>
+        <div class="enemy-grid">
+            <!-- Inimigo 1 -->
+            <div class="enemy-card">
+                <img src="./assets/correndo_3.gif" alt="Inimigo 1">
+                <h3>Lucifero</h3>
+                <p>Lucifero o chefe dos coisa ruim, o homem que mandam no buraco quente, e o dono do 13° SALARIO.</p>
+            </div>
+            <!-- Inimigo 2 -->
+            <div class="enemy-card">
+                <img src="./assets/ghost2.gif" alt="Inimigo 2">
+                <h3>Fantasma Assombrado</h3>
+                <p>Um ex-funcionário público, pois nem na morte param de sofrer.</p>
+            </div>
+            <!-- Inimigo 3 -->
+            <div class="enemy-card">
+                <img src="./assets/vampirobat2.gif" alt="Inimigo 3">
+                <h3>Slime Tóxico</h3>
+                <p>Uma criatura viscosa que trabalhou com o rezendeevil por algum tempo.</p>
+            </div>
+            <!-- Inimigo 4 -->
+            <div class="enemy-card">
+                <img src="./assets/parado3.gif" alt="Inimigo 4">
+                <h3>Pichula</h3>
+                <p>Um palhaço.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Seção Sobre Mim -->
+<section id="about" class="section">
+    <h2 class="main-title">Sobre o Criador</h2>
+    <div class="credits-container">
+        <div class="credit-item">
+            <h2>Hiago Nascimento</h2>
+            <p>Sou uma pessoa calma e traquila que sempre está disposto a ajudar, comecei a faculdade de ADS no integrado faz 3 meses, estoucomeçando a me integrar na área de progamação e espero aprender várias coisas durante minha jornada. </p>
+    </div>
+</section>
+
+<!-- Seção de Feedback incorporada -->
+<section id="feedback" class="section">
+    <h2 class="main-title">Envie seu Feedback</h2>
+    <form id="feedback-form">
+        <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Telefone:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Feedback:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="hero-button">Enviar</button>
+    </form>
+</section>
+        <!-- Seção de Créditos -->
+    <section id="credits" class="section">
+        <h2 class="main-title">Créditos</h2>
+        <div class="credits-container">
+            <div class="credit-item">
+                <h2>Desenvolvimento</h2>
+                <p>Hiago Nascimento</p>
+            </div>
+            <div class="credit-item">
+                <h2>Design e Arte</h2>
+                <p>Hiago Nascimento</p>
+            </div>
+            <div class="credit-item">
+                <h2>Trilha Sonora</h2>
+                <p>Kengas Studio</p>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <p>Desenvolvido por <a href="#">Hiago Nascimento</a>. Todos os direitos reservados.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+:root {
+    /* Cores atualizadas para melhor contraste */
+    --blood-red: #ff1a1a;
+    --neon-blue: #00f3ff;
+    --neon-purple: #9d4dff;
+    --dark-bg: #0a0a0a;
+    --light-bg: #1a1a1a;
+    --text-color: #f8f9fa;
+    --gradient: linear-gradient(135deg, var(--blood-red) 0%, var(--neon-purple) 100%);
+    
+    /* Espaçamentos consistentes */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    
+    /* Transições padronizadas */
+    --transition-short: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-medium: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset modernizado */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--dark-bg);
+    color: var(--text-color);
+    font-family: 'Black Ops One', cursive;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    min-height: 100vh;
+    overflow-x: hidden;
+    text-rendering: optimizeSpeed;
+}
+
+/* Navbar otimizada */
+.hell-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--light-bg);
+    padding: var(--space-sm) var(--space-md);
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 5px;
+    transition: var(--transition-medium);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient);
+    opacity: 0;
+    transition: var(--transition-medium);
+    z-index: -1;
+}
+
+.nav-link:hover::before {
+    opacity: 1;
+}
+
+.nav-link:hover {
+    color: var(--dark-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-purple);
+}
+
+/* Hero Section refinada */
+#hero {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background: var(--gradient);
+    color: var(--dark-bg);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    position: relative;
+    isolation: isolate;
+    padding-top: 8rem;
+}
+
+#hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('./assets/image0_0.jpg') center/cover no-repeat;
+    mix-blend-mode: multiply;
+    filter: brightness(0.7) contrast(1.2);
+    z-index: -1;
+}
+
+.main-title {
+    font-size: clamp(4rem, 10vw, 8rem);
+    text-shadow: 0 0 20px rgba(255, 26, 26, 0.8), 
+                 0 0 40px rgba(157, 77, 255, 0.6);
+    line-height: 1.1;
+    margin-bottom: var(--space-sm);
+}
+
+.tagline {
+    font-size: 2.4rem;
+    max-width: 60ch;
+    margin: 0 auto var(--space-md);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-button {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 1.8rem;
+    background: var(--gradient);
+    border: 2px solid var(--neon-blue);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-medium);
+}
+
+.hero-button::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: var(--transition-medium);
+}
+
+.hero-button:hover {
+    transform: scale(1.05) rotate(-2deg);
+    box-shadow: 0 0 30px var(--neon-blue), 
+                0 0 60px var(--neon-purple);
+}
+
+.hero-button:hover::after {
+    opacity: 1;
+}
+
+/* Seções genéricas melhoradas */
+.section {
+    padding: var(--space-lg) var(--space-md);
+    scroll-margin-top: 8rem;
+}
+
+.section h2 {
+    font-size: 3.6rem;
+    margin-bottom: var(--space-md);
+    text-shadow: 0 0 15px var(--neon-blue);
+}
+
+.section p {
+    max-width: 80ch;
+    margin: 0 auto var(--space-md);
+    font-size: 1.8rem;
+}
+
+/* Game Container responsivo */
+.game-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: var(--space-md) auto;
+    aspect-ratio: 16/9;
+    border: 3px solid var(--neon-blue);
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+#game-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Cards modernizados */
+.enemy-grid, .credits-container {
+    display: grid;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.enemy-card, .credit-item {
+    background: linear-gradient(145deg, 
+        rgba(26, 26, 26, 0.9) 0%, 
+        rgba(10, 10, 10, 0.95) 100%);
+    padding: var(--space-md);
+    border-radius: 15px;
+    border: 1px solid var(--neon-purple);
+    backdrop-filter: blur(5px);
+    transition: var(--transition-medium);
+}
+
+.enemy-card:hover, .credit-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(157, 77, 255, 0.3),
+                0 0 40px rgba(0, 243, 255, 0.2);
+}
+
+/* Formulário aprimorado */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--space-md);
+    background: rgba(26, 26, 26, 0.9);
+    border: 2px solid var(--neon-blue);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.form-group {
+    margin-bottom: var(--space-md);
+}
+
+label {
+    display: block;
+    margin-bottom: var(--space-xs);
+    font-size: 1.6rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: var(--space-sm);
+    background: rgba(255, 255, 255, 0.9); /* Agora branco translúcido */
+    color: #000; /* Texto preto pra contraste */
+    border: 1px solid var(--neon-purple);
+    border-radius: 8px;
+    transition: var(--transition-short);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 15px var(--neon-blue);
+}
+
+/* Footer atualizado */
+footer {
+    text-align: center;
+    padding: var(--space-md);
+    background: var(--light-bg);
+    border-top: 2px solid var(--neon-purple);
+}
+
+/* Melhorias de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
